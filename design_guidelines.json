@@ -1,0 +1,155 @@
+{
+  "project_name": "Luxur & Lavish Catalogue Return Management System",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) + Archetype 5 (Luxury)",
+  "theme_mode": "Light (Primary)",
+  "design_philosophy": "A pristine, high-end 'Control Room' for shop management. Professional white and deep blue tones communicate authority and reliability. Layouts prioritize data density and scanning efficiency while maintaining generous optical breathing room via padding and sharp borders.",
+  "theme": {
+    "colors": {
+      "brand": {
+        "primary": "#1E3A8A",
+        "primary_hover": "#1E40AF",
+        "accent": "#2563EB",
+        "accent_hover": "#1D4ED8"
+      },
+      "background": {
+        "app": "#F8FAFC",
+        "surface": "#FFFFFF",
+        "surface_hover": "#F1F5F9"
+      },
+      "text": {
+        "primary": "#0F172A",
+        "secondary": "#64748b",
+        "disabled": "#94A3B8"
+      },
+      "status": {
+        "overdue_text": "#DC2626",
+        "overdue_bg": "#FEF2F2",
+        "overdue_border": "#FECACA",
+        "success_text": "#16A34A",
+        "success_bg": "#F0FDF4",
+        "pending_text": "#D97706",
+        "pending_bg": "#FFFBEB"
+      },
+      "border": {
+        "default": "#E2E8F0",
+        "focus": "#2563EB"
+      }
+    },
+    "typography": {
+      "fonts": {
+        "heading": "'Outfit', sans-serif",
+        "body": "'Manrope', sans-serif",
+        "mono": "'JetBrains Mono', monospace"
+      },
+      "scale": {
+        "h1": "text-4xl font-bold tracking-tight text-slate-900",
+        "h2": "text-2xl font-semibold tracking-tight text-slate-900",
+        "h3": "text-lg font-medium text-slate-800",
+        "body": "text-sm text-slate-600 leading-relaxed",
+        "label": "text-xs font-semibold uppercase tracking-[0.05em] text-slate-500"
+      }
+    },
+    "spacing": {
+      "app_padding": "p-6 md:p-8 lg:p-12",
+      "section_gap": "gap-8 lg:gap-12",
+      "grid_gap": "gap-6",
+      "card_padding": "p-6"
+    },
+    "borders_and_shadows": {
+      "radius": {
+        "card": "rounded-xl",
+        "button": "rounded-lg",
+        "input": "rounded-md"
+      },
+      "shadow": {
+        "card": "shadow-sm",
+        "dropdown": "shadow-lg shadow-slate-200/50",
+        "hover": "shadow-md shadow-slate-200/50"
+      },
+      "border_width": "border"
+    }
+  },
+  "layout_strategies": {
+    "global": {
+      "structure": "Sidebar Navigation (Left, Fixed) + Top Navbar (Search/Profile) + Main Content Area",
+      "sidebar": "Dark navy background (bg-slate-900) with white/slate-300 text for high contrast luxury feel. Active state uses bg-blue-600.",
+      "navbar": "Glassmorphism (bg-white/80 backdrop-blur-md) with a 1px border-b border-slate-200."
+    },
+    "dashboard_grid": {
+      "type": "Control Room Grid",
+      "stat_cards": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "charts_row": "grid-cols-1 lg:grid-cols-3 gap-6. Issue/Return Trend takes col-span-2, Most Borrowed takes col-span-1."
+    },
+    "forms": {
+      "structure": "Multi-column grid for standard forms. Dynamic rows for 'Issue Catalogue' (multi-catalogue support).",
+      "autocomplete": "Use Shadcn Command component for Customer Name search."
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "bg-white border border-slate-200 rounded-xl p-6 shadow-sm",
+      "hover_effect": "transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-blue-200"
+    },
+    "buttons": {
+      "primary": "bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition-colors",
+      "secondary": "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-900 px-4 py-2 rounded-lg transition-colors",
+      "danger": "bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+    },
+    "tables": {
+      "style": "w-full text-sm text-left border-collapse",
+      "header": "bg-slate-50 border-y border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-xs py-3 px-4",
+      "row": "border-b border-slate-100 hover:bg-slate-50/50 transition-colors",
+      "cell": "py-3 px-4 text-slate-700",
+      "overdue_row": "bg-red-50/50 border-red-100 hover:bg-red-50"
+    },
+    "badges": {
+      "overdue": "bg-red-100 text-red-700 border border-red-200 px-2.5 py-0.5 rounded-full text-xs font-medium",
+      "pending": "bg-amber-100 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-full text-xs font-medium",
+      "returned": "bg-green-100 text-green-700 border border-green-200 px-2.5 py-0.5 rounded-full text-xs font-medium"
+    },
+    "inputs": {
+      "style": "border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full"
+    }
+  },
+  "animations": {
+    "transitions": {
+      "default": "transition-all duration-200 ease-in-out",
+      "slow": "transition-all duration-300 ease-in-out"
+    },
+    "interactions": {
+      "button_click": "active:scale-[0.98]",
+      "toast_enter": "animate-in slide-in-from-right"
+    }
+  },
+  "media": {
+    "login_background": {
+      "url": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB0ZXh0aWxlJTIwc2hvcCUyMGludGVyaW9yfGVufDB8fHx8MTc4MjM4NjQ1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Modern boutique clothing store interior, to be used with a deep navy/blue overlay (bg-blue-900/80) on the login screen."
+    },
+    "brand_abstract": {
+      "url": "https://images.unsplash.com/photo-1687197180710-b2b9484a3c5f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBtaW5pbWFsJTIwYWJzdHJhY3QlMjBibHVlfGVufDB8fHx8MTc4MjM4NjQ1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract luxury blue waves, useful for authentication side-panels or premium decorative backgrounds."
+    },
+    "catalogue_placeholders": [
+      "https://images.unsplash.com/photo-1619459075136-2b53c6153d4f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxmYXNoaW9uJTIwZmFicmljJTIwdGV4dHVyZXxlbnwwfHx8fDE3ODIzODY0NTJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1532190370294-e81fe487b61a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwZmFicmljJTIwdGV4dHVyZXxlbnwwfHx8fDE3ODIzODY0NTJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/13368318/pexels-photo-13368318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "accessibility": {
+    "testing": "All interactive elements (buttons, inputs, links, select options, table actions, menu items, tabs, dialog buttons) MUST include a 'data-testid' attribute using kebab-case and role-based naming (e.g., data-testid='submit-issue-catalogue-button', data-testid='customer-search-input').",
+    "contrast": "Text over backgrounds must meet 4.5:1 ratio. Overdue text must use dark red (#DC2626) on light red background for legibility.",
+    "icons": "Use 'lucide-react' for all icons. Ensure decorative icons have aria-hidden='true'."
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette. Do not use generic tailwind grays; rely on the slate palette for an enterprise look.",
+    "Typography: Use Outfit for Headings and Manrope for Body. Fetch via Google Fonts.",
+    "For the 'Issue Catalogue' page, use a dynamic form array allowing the user to add multiple rows. Include a Shadcn Command component for the 'Customer Name' autocomplete feature.",
+    "For 'Pending Returns', ensure any row with a date past 'today' is rendered with 'bg-red-50/50' and red text for immediate visual hierarchy.",
+    "Dashboard must utilize Recharts or Shadcn Charts for the 3 requested charts. Adhere to the provided grid layouts.",
+    "All navigation must reside in a persistent Sidebar on desktop, transforming to a Hamburger-triggered Sheet on mobile.",
+    "Use Sonner for toast notifications and Shadcn Dialogs for all critical actions (like Confirm Return, Delete Catalogue).",
+    "Do NOT use raw HTML `<select>` or native `date` pickers. Exclusively use Shadcn UI's Select, Command, and Popover DatePickers.",
+    "All components must be written as .js or .jsx (no TypeScript)."
+  ]
+}
