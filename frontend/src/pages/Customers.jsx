@@ -15,9 +15,16 @@ export default function Customers() {
   const [editingId, setEditingId] = useState(null);
   const [delId, setDelId] = useState(null);
 
-  const load = async () => { const { data } = await api.get(`/customers${q ? `?q=${encodeURIComponent(q)}` : ""}`); setList(data); };
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [q]);
+  const load = useCallback(async () => {
+  const { data } = await api.get(
+    `/customers${q ? `?q=${encodeURIComponent(q)}` : ""}`
+  );
+  setList(data);
+}, [q]);
 
+useEffect(() => {
+  load();
+}, [load]);
   const openAdd = () => { setForm(empty); setEditingId(null); setOpen(true); };
   const openEdit = (c) => { setForm({ name: c.name, mobile: c.mobile, whatsapp: c.whatsapp, address: c.address, notes: c.notes }); setEditingId(c.id); setOpen(true); };
   const save = async () => {

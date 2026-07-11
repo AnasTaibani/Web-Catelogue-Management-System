@@ -22,8 +22,16 @@ export default function Catalogues() {
   const [viewingId, setViewingId] = useState(null);
   const nav = useNavigate();
 
-  const load = async () => { const { data } = await api.get(`/catalogues${q ? `?q=${encodeURIComponent(q)}` : ""}`); setList(data); };
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [q]);
+  const load = useCallback(async () => {
+  const { data } = await api.get(
+    `/catalogues${q ? `?q=${encodeURIComponent(q)}` : ""}`
+  );
+  setList(data);
+}, [q]);
+
+  useEffect(() => {
+  load();
+}, [load]);
 
   const openAdd = () => { setForm(empty); setEditingId(null); setOpen(true); };
   const openEdit = (c) => { setForm({ name: c.name, brand: c.brand, category: c.category, total_quantity: c.total_quantity, description: c.description, image_url: c.image_url }); setEditingId(c.id); setOpen(true); };
