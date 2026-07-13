@@ -100,13 +100,10 @@ export default function Login() {
               disabled={loading}
               className="btn-gold w-full justify-center mt-2"
             >
-              {loading ? "Signing in…" : (<>Enter atelier <ArrowRight className="w-4 h-4" /></>)}
+              {loading ? "Signing in…" : (<>Sign In <ArrowRight className="w-4 h-4" /></>)}
             </button>
 
-            <div className="mt-8 p-4 rounded-xl text-xs text-neutral-400 leading-relaxed" style={{ background: "var(--ll-card)", border: "1px solid var(--ll-border)" }}>
-              <span className="text-[color:var(--ll-gold)] font-medium">Demo access · </span>
-              admin / admin123
-            </div>
+            
           </form>
         </div>
       </div>
