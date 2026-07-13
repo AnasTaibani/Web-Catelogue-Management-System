@@ -147,7 +147,13 @@ export default function Dashboard() {
                     
                     <td className="text-white">{t.customer_name}</td>
                     <td>{t.items.length} title(s) · {t.items.reduce((s, i) => s + i.quantity, 0)} qty</td>
-                    <td className="text-neutral-500">{fmtDate(t.issue_date)}</td>
+                    <td className="text-neutral-500">
+                        {new Date(t.issue_date).toLocaleDateString("en-GB", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </td>
                     <td>
                       <span className={`badge-lux ${t.status === "returned" ? "badge-emerald" : t.status === "partial" ? "badge-gold" : "badge-neutral"}`}>{t.status}</span>
                     </td>
