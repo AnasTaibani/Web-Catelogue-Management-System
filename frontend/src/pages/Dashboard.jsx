@@ -134,7 +134,7 @@ export default function Dashboard() {
             <table className="table-lux" data-testid="recent-transactions-table">
               <thead>
                 <tr>
-                  <th>Transaction</th>
+                  
                   <th>Client</th>
                   <th>Items</th>
                   <th>Issued</th>
@@ -144,7 +144,7 @@ export default function Dashboard() {
               <tbody>
                 {stats.recent_transactions.map((t) => (
                   <tr key={t.id}>
-                    <td className="font-mono-2 text-xs text-neutral-400">{t.transaction_id}</td>
+                    
                     <td className="text-white">{t.customer_name}</td>
                     <td>{t.items.length} title(s) · {t.items.reduce((s, i) => s + i.quantity, 0)} qty</td>
                     <td className="text-neutral-500">{fmtDate(t.issue_date)}</td>
